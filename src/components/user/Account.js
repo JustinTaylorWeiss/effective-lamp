@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { Card, Button, Alert } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
+import { baseRoute } from '../../App';
 
 export const Account = () => {
     const [error, setError] = useState("");

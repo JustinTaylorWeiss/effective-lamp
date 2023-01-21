@@ -3,6 +3,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { AddFileButton } from '../dashboard/AddFileButton';
+import { baseRoute } from '../../App';
 
 export const NavbarComponent = () => {
     const { currentUser } = useAuth();

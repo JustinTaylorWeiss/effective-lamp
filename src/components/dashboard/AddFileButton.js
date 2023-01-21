@@ -10,6 +10,7 @@ import { storage } from '../../firebase';
 import { addDoc, collection, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytesResumable, updateMetadata, getDownloadURL } from 'firebase/storage';
 import { v4 as uuidV4 } from 'uuid';
+import { baseRoute } from '../../App';
 
 export const AddFileButton = ({ update }) => {
     const [uploadingFiles, setUploadingFiles] = useState([]);

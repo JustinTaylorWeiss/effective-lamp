@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import { Link } from "react-router-dom";
 import { Card, Form, Button, Alert } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
+import { baseRoute } from '../../App';
 
 export const UpdatePassword = () => {
     const oldPasswordRef = useRef();
