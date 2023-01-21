@@ -13,7 +13,7 @@ export const Account = () => {
         setError("");
         try {
             await logout()
-            navigate("/login");
+            navigate(baseRoute+"/login");
         } catch (e) {
             console.log(e);
             setError("Failed to log out");
@@ -29,13 +29,13 @@ export const Account = () => {
             w-100">
                 <h2 className="text-center mb-3">{currentUser.displayName}</h2>
                 <h4 className="text-center mb-3">{currentUser.email}</h4>
-                <Link className="w-100 mt-3" to="/update-display-name">
+                <Link className="w-100 mt-3" to={baseRoute+"/update-display-name"}>
                     <Button className="w-100" style={{ minWidth: "90px" }}>Update Display Name</Button>
                 </Link>
-                <Link className="w-100 mt-3" to="/update-password">
+                <Link className="w-100 mt-3" to={baseRoute+"/update-password"}>
                     <Button className="w-100" style={{ minWidth: "90px" }}>Update Password</Button>
                 </Link>
-                <Link className="w-100 mt-3" to="/">
+                <Link className="w-100 mt-3" to={baseRoute+"/"}>
                     <Button className="w-100" style={{ minWidth: "90px" }}>Back to dashboard</Button>
                 </Link>
                 <Button className="btn-danger w-100 mt-3" onClick={handleLogout} style={{ minWidth: "90px" }}>Log Out</Button>

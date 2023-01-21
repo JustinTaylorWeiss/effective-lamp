@@ -46,7 +46,7 @@ export const UpdateDisplayName = () => {
                         <Form.Control type="text" ref={newDisplayNameRef} required/>
                     </Form.Group>
                     <Button disabled={loading} className="w-100 mt-4" type="submit">Submit</Button>
-                    <Link to="/account">
+                    <Link to={baseRoute+"/account"}>
                         <Button className="w-100 mt-4">Back to account</Button>
                     </Link>
                 </Form>

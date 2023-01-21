@@ -40,12 +40,12 @@ export const ForgotPassword = () => {
                     <Button disabled={loading} className="w-100 mt-4" type="submit">Reset Password</Button>
                 </Form>
                 <div className="w-100 text-center mt-2">
-                    <Link to="/login">Login</Link>
+                    <Link to={baseRoute+"/login"}>Login</Link>
                 </div>
             </Card.Body>
         </Card>
         <div className="w-100 text-center mt-2">
-            Need an account? <Link to="/signup">Sign Up</Link>
+            Need an account? <Link to={baseRoute+"/signup"}>Sign Up</Link>
         </div>
     </CenteredContainer>
 }

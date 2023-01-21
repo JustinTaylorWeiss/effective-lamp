@@ -6,30 +6,31 @@ import { AuthProvider } from "./contexts/AuthContext";
 import "./App.css";
 
 const Dashboard = lazy(() => import("./components/dashboard"));
+export const baseRoute = "/effective-lamp"
 
 const App = () => (
     <Router>
         <AuthProvider>
             <NavbarComponent/>
             <Routes>
-                <Route exact path="/" element={<PrivateRoute/>}>
-                    <Route exact path="/" element={<Suspense><Dashboard/></Suspense>}/>
+                <Route exact path={baseRoute+"/"} element={<PrivateRoute/>}>
+                    <Route exact path={baseRoute+"/"} element={<Suspense><Dashboard/></Suspense>}/>
                 </Route>
-                <Route path="/signup" element={<Signup/>}/>
-                <Route path="/login" element={<UnPrivateRoute/>}>
-                    <Route path="/login" element={<Login/>}/>
+                <Route path={baseRoute+"/signup"} element={<Signup/>}/>
+                <Route path={baseRoute+"/login"} element={<UnPrivateRoute/>}>
+                    <Route path={baseRoute+"/login"} element={<Login/>}/>
                 </Route>
-                <Route path="/forgot-password" element={<UnPrivateRoute/>}>
-                    <Route path="/forgot-password" element={<ForgotPassword/>}/>
+                <Route path={baseRoute+"/forgot-password"} element={<UnPrivateRoute/>}>
+                    <Route path={baseRoute+"/forgot-password"} element={<ForgotPassword/>}/>
                 </Route>
-                <Route exact path="/account" element={<PrivateRoute/>}>
-                    <Route path="/account" element={<Account/>}/>
+                <Route exact path={baseRoute+"/account"} element={<PrivateRoute/>}>
+                    <Route path={baseRoute+"/account"} element={<Account/>}/>
                 </Route>
-                <Route exact path="/update-display-name" element={<PrivateRoute/>}>
-                    <Route path="/update-display-name" element={<UpdateDisplayName/>}/>
+                <Route exact path={baseRoute+"/update-display-name"} element={<PrivateRoute/>}>
+                    <Route path={baseRoute+"/update-display-name"} element={<UpdateDisplayName/>}/>
                 </Route>
-                <Route exact path="/update-password" element={<PrivateRoute/>}>
-                    <Route path="/update-password" element={<UpdatePassword/>}/>
+                <Route exact path={baseRoute+"/update-password"} element={<PrivateRoute/>}>
+                    <Route path={baseRoute+"/update-password"} element={<UpdatePassword/>}/>
                 </Route>
             </Routes>
         </AuthProvider>

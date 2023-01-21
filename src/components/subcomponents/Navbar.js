@@ -9,14 +9,14 @@ export const NavbarComponent = () => {
 
     return <Navbar style={{ paddingLeft: "20px", paddingRight: "20px", justifyContent: "space-between"}} className="mx-10" bg="light" expand="lg">
         <Navbar.Brand>
-            <Link className="text-dark text-decoration-none" to="/">
+            <Link className="text-dark text-decoration-none" to={baseRoute+"/"}>
                 <h2><strong>RWPawnDex</strong></h2>
             </Link>
         </Navbar.Brand>
         <h3>Rimworld / Characters</h3>
         <Nav style={{ flexDirection: "row", columnGap: "20px"}}>
             <div id="Navbar-Nav" style={{ width: "25px" }}/>
-            {currentUser && <Nav.Link as={Link} to="/account">{currentUser.displayName}</Nav.Link>}
+            {currentUser && <Nav.Link as={Link} to={baseRoute+"/account"}>{currentUser.displayName}</Nav.Link>}
         </Nav>
     </Navbar>
 }

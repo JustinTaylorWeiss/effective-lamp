@@ -7,13 +7,13 @@ export const PrivateRoute = () => {
 
     return currentUser 
         ? <Outlet/> 
-        : <Navigate to="/login"/>
+        : <Navigate to={baseRoute+"/login"}/>
 }
 
 export const UnPrivateRoute = () => {
     const { currentUser } = useAuth();
 
     return currentUser 
-        ? <Navigate to="/"/>
+        ? <Navigate to={baseRoute+"/"}/>
         : <Outlet/> 
 }

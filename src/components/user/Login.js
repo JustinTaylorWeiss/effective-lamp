@@ -19,7 +19,7 @@ export const Login = () => {
             setError("");
             setLoading(true);
             await login(emailRef.current.value, passwordRef.current.value);
-            navigate("/");
+            navigate(baseRoute+"/");
         } catch (e) {
             setError(e.code);
         }
@@ -43,12 +43,12 @@ export const Login = () => {
                     <Button disabled={loading} className="w-100 mt-4" type="submit">Log In</Button>
                 </Form>
                 <div className="w-100 text-center mt-2">
-                    <Link to="/forgot-password">Forgot Password?</Link>
+                    <Link to={baseRoute+"/forgot-password"}>Forgot Password?</Link>
                 </div>
             </Card.Body>
         </Card>
         <div className="w-100 text-center mt-2">
-            Need an account? <Link to="/signup">Sign Up</Link>
+            Need an account? <Link to={baseRoute+"/signup"}>Sign Up</Link>
         </div>
     </CenteredContainer>
 }
